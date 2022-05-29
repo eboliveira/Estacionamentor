@@ -3,4 +3,5 @@
     <string name="entrance">Entrada</string>
     <string name="exit">Saída</string>
     <string name="close">Sair</string>
+    <string name="menu">Menu</string>
 </resources>
