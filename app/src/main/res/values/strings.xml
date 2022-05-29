@@ -4,4 +4,7 @@
     <string name="exit">Saída</string>
     <string name="close">Sair</string>
     <string name="menu">Menu</string>
+    <string name="plate_number">Número da placa:</string>
+    <string name="payment">Pagamento</string>
+    <string name="see_history">Ver histórico</string>
 </resources>

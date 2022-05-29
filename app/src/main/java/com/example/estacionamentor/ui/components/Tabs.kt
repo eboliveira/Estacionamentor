@@ -2,6 +2,7 @@ package com.example.estacionamentor.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -9,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.estacionamentor.R
 import com.example.estacionamentor.ui.theme.EstacionamentorTheme
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -21,7 +23,7 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun Tabs(pagerState: PagerState) {
-    Scaffold {
+    Scaffold(modifier = Modifier.padding(horizontal = 8.dp)) {
         Column {
             val scope = rememberCoroutineScope()
             TabRow(
