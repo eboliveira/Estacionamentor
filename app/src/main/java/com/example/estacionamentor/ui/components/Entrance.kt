@@ -1,7 +1,6 @@
 package com.example.estacionamentor.ui.components
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -14,22 +13,21 @@ import com.example.estacionamentor.ui.theme.Success
 
 @Composable
 fun Entrance() {
-    Scaffold {
-        Column(
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp)
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .wrapContentHeight()
+            .padding(horizontal = 16.dp)
+    ) {
+        val plate = ""
+        Spacer(Modifier.height(36.dp))
+        PlateInputField(plate)
+        Spacer(Modifier.height(16.dp))
+        Button(
+            backgroundColor = Success,
+            text = stringResource(id = R.string.confirm_entrance)
         ) {
-            val plate = ""
-            Spacer(Modifier.height(36.dp))
-            PlateInputField(plate)
-            Spacer(Modifier.height(16.dp))
-            Button(
-                backgroundColor = Success,
-                text = stringResource(id = R.string.confirm_entrance)
-            ) {
-                confirmEntrance()
-            }
+            confirmEntrance()
         }
     }
 }
