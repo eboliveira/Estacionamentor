@@ -31,7 +31,7 @@ fun Exit() {
     }
 }
 
-fun exit() {
+private fun exit() {
 
 }
 
