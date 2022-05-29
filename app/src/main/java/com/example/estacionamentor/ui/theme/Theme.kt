@@ -8,8 +8,8 @@ import androidx.compose.ui.graphics.Color
 private val LightColorPalette = lightColors(
     primary = Teal,
     primaryVariant = Purple700,
-    secondary = Teal200,
-    onPrimary = Color.White
+    secondary = Purple,
+    onPrimary = Color.White,
 )
 
 @Composable
