@@ -19,9 +19,8 @@ fun Entrance() {
             .wrapContentHeight()
             .padding(horizontal = 16.dp)
     ) {
-        val plate = ""
         Spacer(Modifier.height(36.dp))
-        PlateInputField(plate)
+        PlateInputField()
         Spacer(Modifier.height(16.dp))
         Button(
             backgroundColor = Success,

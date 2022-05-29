@@ -17,9 +17,8 @@ fun Exit() {
             .fillMaxWidth()
             .padding(horizontal = 16.dp)
     ) {
-        val plate = ""
         Spacer(Modifier.height(36.dp))
-        PlateInputField(plate)
+        PlateInputField()
         Spacer(Modifier.height(16.dp))
         Button(text = stringResource(id = R.string.payment)) { exit() }
         Spacer(Modifier.height(16.dp))
