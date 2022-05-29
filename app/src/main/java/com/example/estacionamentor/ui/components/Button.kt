@@ -17,13 +17,14 @@ import com.example.estacionamentor.ui.theme.EstacionamentorTheme
 fun Button(
     modifier: Modifier = Modifier,
     text: String = "",
+    backgroundColor: Color = MaterialTheme.colors.secondary,
     onClick: () -> Unit,
 ) {
     androidx.compose.material.Button(
         modifier = modifier.fillMaxWidth(),
         onClick = onClick,
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = MaterialTheme.colors.secondary,
+            backgroundColor = backgroundColor,
             contentColor = Color.White
         )
     ) {
