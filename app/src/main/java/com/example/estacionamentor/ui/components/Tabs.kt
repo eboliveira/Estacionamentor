@@ -3,9 +3,11 @@ package com.example.estacionamentor.ui.components
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
@@ -23,30 +25,21 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun Tabs(pagerState: PagerState) {
-    Scaffold(modifier = Modifier.padding(horizontal = 8.dp)) {
-        Column {
-            val scope = rememberCoroutineScope()
-            TabRow(
-                selectedTabIndex = pagerState.currentPage,
-                contentColor = MaterialTheme.colors.primary,
-                backgroundColor = MaterialTheme.colors.surface,
-            ) {
-                Tab(pagerState, index = 0, title = R.string.entrance, scope)
-                Tab(pagerState, index = 1, title = R.string.exit, scope)
-            }
-            TabsContent(pagerState, 2)
+    Column(
+        modifier = Modifier
+            .padding(horizontal = 8.dp)
+            .background(color = MaterialTheme.colors.surface)
+    ) {
+        val scope = rememberCoroutineScope()
+        TabRow(
+            selectedTabIndex = pagerState.currentPage,
+            contentColor = MaterialTheme.colors.primary,
+            backgroundColor = MaterialTheme.colors.surface,
+        ) {
+            Tab(pagerState, index = 0, title = R.string.entrance, scope)
+            Tab(pagerState, index = 1, title = R.string.exit, scope)
         }
-    }
-}
-
-@OptIn(ExperimentalPagerApi::class)
-@Composable
-fun TabsContent(pagerState: PagerState, count: Int) {
-    HorizontalPager(state = pagerState, count = count) { page ->
-        when (page) {
-            0 -> Entrance()
-            1 -> Exit()
-        }
+        TabsContent(pagerState, 2)
     }
 }
 
@@ -66,6 +59,22 @@ private fun Tab(pagerState: PagerState, index: Int, title: Int, scope: Coroutine
             }
         },
     )
+}
+
+@OptIn(ExperimentalPagerApi::class)
+@Composable
+fun TabsContent(pagerState: PagerState, count: Int) {
+    HorizontalPager(
+        state = pagerState,
+        count = count,
+        verticalAlignment = Alignment.Top,
+        modifier = Modifier.wrapContentHeight()
+    ) { page ->
+        when (page) {
+            0 -> Entrance()
+            1 -> Exit()
+        }
+    }
 }
 
 @OptIn(ExperimentalPagerApi::class)
